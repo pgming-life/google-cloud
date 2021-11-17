@@ -1,3 +1,5 @@
+"""2021/11/17"""
+
 import os
 import argparse
 from tqdm.autonotebook import tqdm
@@ -42,6 +44,7 @@ def speech_recognize(storage_uri, credential_path):
     operation = client.long_running_recognize(config=config, audio=audio)
     print("Waiting for operation to complete...")
     response = operation.result(timeout=1800)
+    # 1 hour and thirty 3inutes of audio takes 15 minutes to analyze.
 
     return response
 
